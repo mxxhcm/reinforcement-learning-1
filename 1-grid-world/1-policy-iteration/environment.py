@@ -29,7 +29,7 @@ class GraphicDisplay(tk.Tk):
         (self.up, self.down, self.left, self.right), self.shapes = self.load_images()
         self.canvas = self._build_canvas()
         self.text_reward(2, 2, "R : 1.0")
-        self.text_reward(1, 2, "R : -1.0")
+        self.text_reward(1, 2, "R : -3.0")
         self.text_reward(2, 1, "R : -1.0")
 
     def _build_canvas(self):
@@ -42,15 +42,18 @@ class GraphicDisplay(tk.Tk):
         iteration_button.configure(width=10, activebackground="#33B5E5")
         canvas.create_window(WIDTH * UNIT * 0.13, HEIGHT * UNIT + 10,
                              window=iteration_button)
+
         policy_button = Button(self, text="Improve",
                                command=self.improve_policy)
         policy_button.configure(width=10, activebackground="#33B5E5")
         canvas.create_window(WIDTH * UNIT * 0.37, HEIGHT * UNIT + 10,
                              window=policy_button)
+
         policy_button = Button(self, text="move", command=self.move_by_policy)
         policy_button.configure(width=10, activebackground="#33B5E5")
         canvas.create_window(WIDTH * UNIT * 0.62, HEIGHT * UNIT + 10,
                              window=policy_button)
+
         policy_button = Button(self, text="reset", command=self.reset)
         policy_button.configure(width=10, activebackground="#33B5E5")
         canvas.create_window(WIDTH * UNIT * 0.87, HEIGHT * UNIT + 10,

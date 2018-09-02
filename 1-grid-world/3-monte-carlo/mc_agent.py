@@ -13,6 +13,7 @@ class MCAgent:
         self.learning_rate = 0.01
         self.discount_factor = 0.9
         self.epsilon = 0.1
+
         self.samples = []
         self.value_table = defaultdict(float)
 
